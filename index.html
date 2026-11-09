@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f0e5" />
+  <link rel="icon" href="data:," />
+  <title>Long Way Home — a road-trip survival game</title>
+  <link rel="preload" href="assets/fonts/archivo-black.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Long Way Home home"><span class="brand-mark">LW<span>↗</span></span><span class="brand-name">LONG WAY<br />HOME</span></a>
+      <div class="top-center"><span class="live-dot"></span><span id="top-status">THE GREAT AMERICAN GETAWAY</span></div>
+      <button class="icon-button sound-toggle" id="sound-toggle" aria-label="Toggle sound" title="Sound on/off">♫</button>
+    </header>
+
+    <main id="game" class="game-layout">
+      <section class="journey-column">
+        <div class="eyebrow"><span class="eyebrow-line"></span><span id="eyebrow-text">A CROSS-COUNTRY SURVIVAL GAME</span></div>
+        <div class="heading-row"><div><h1 id="page-title">The long<br /><em>way home.</em></h1><p class="intro" id="page-intro">One van. Five friends. Three thousand miles between here and somewhere new.</p></div><div class="journey-stamp" id="journey-stamp"><span>ROUTE</span><strong>01</strong><small>SF → AC</small></div></div>
+
+        <div class="scene-card" id="scene-card">
+          <svg class="landscape" viewBox="0 0 880 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrated road through the American west">
+            <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#e8b76c"/><stop offset="1" stop-color="#f2d394"/></linearGradient><linearGradient id="hill" x2="0" y2="1"><stop stop-color="#bf804f"/><stop offset="1" stop-color="#8d6545"/></linearGradient><linearGradient id="road" x2="0" y2="1"><stop stop-color="#806950"/><stop offset="1" stop-color="#594d42"/></linearGradient></defs>
+            <rect width="880" height="380" fill="url(#sky)"/><circle cx="661" cy="93" r="44" fill="#f5dc9a" opacity=".8"/><path d="M0 228 100 132l45 48 90-112 108 129 71-76 111 122 90-105 116 96 66-59 83 63v142H0Z" fill="#ad815e"/><path d="m0 260 121-87 68 64 97-91 98 108 87-98 104 94 102-73 91 89 112-66v180H0Z" fill="#927352"/><path d="M0 287q135-41 244-1t226-6q146-55 410 15v85H0Z" fill="#66704f"/><path d="M0 311q190-51 355 1t525-5v73H0Z" fill="#506548"/><path d="M346 380q56-87 120-126t119-30q-59 29-78 64t-28 92Z" fill="url(#road)"/><path d="M457 380q22-82 68-124" fill="none" stroke="#e9c98a" stroke-width="4" stroke-dasharray="17 18"/><g fill="#f2dfb6" opacity=".7"><path d="M45 95h112M75 112h84M710 174h95"/></g><g fill="#374d3c"><path d="m102 280 19-51 19 51h-12v25h-15v-25Z"/><path d="m160 290 15-41 16 41h-10v20h-13v-20Z"/><path d="m790 267 18-51 18 51h-12v27h-13v-27Z"/></g>
+            <g class="van-art" transform="translate(347 278)"><ellipse cx="68" cy="48" rx="88" ry="13" fill="#414335" opacity=".24"/><path d="M5 10q0-9 10-9h80q8 0 13 8l23 24q3 4 3 10v17H2V25Z" fill="#d85435" stroke="#683e31" stroke-width="3"/><path d="M98 6h-27v27h51Z" fill="#8eb0a4" stroke="#683e31" stroke-width="3"/><path d="M9 10h52v23H8Z" fill="#f0dcad"/><path d="M12 16h45" stroke="#b94a32" stroke-width="4"/><path d="M5 38h117" stroke="#f1d89e" stroke-width="5"/><rect x="19" y="29" width="19" height="10" rx="2" fill="#e9c987"/><circle cx="29" cy="57" r="12" fill="#393c35"/><circle cx="29" cy="57" r="5" fill="#d6c7a0"/><circle cx="103" cy="57" r="12" fill="#393c35"/><circle cx="103" cy="57" r="5" fill="#d6c7a0"/></g>
+            <g id="scene-label"><rect x="29" y="27" width="190" height="29" rx="3" fill="#fbf2df" opacity=".93"/><text x="43" y="46" fill="#594f3e" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" letter-spacing="2">SIERRA NEVADA · MILE 218</text></g>
+          </svg>
+          <div class="scene-caption"><span id="scene-kicker">CALIFORNIA, HERE WE COME</span><span class="caption-right">EST. 3,056 MILES <i>✳</i></span></div>
+        </div>
+
+        <section class="route-panel" aria-label="Journey route">
+          <div class="route-head"><div><span class="section-label">THE ROUTE EAST</span><span class="route-sub" id="route-sub">A long way from home.</span></div><span class="mile-counter"><strong id="mile-count">0</strong><small> / 3,056 MI</small></span></div>
+          <div class="route-track"><div class="route-progress" id="route-progress"></div><div class="route-stops" id="route-stops"></div><div class="route-van" id="route-van">◆</div></div>
+          <div class="route-ends"><span>SF<br /><small>SAN FRANCISCO</small></span><span>AC<br /><small>ATLANTIC CITY</small></span></div>
+        </section>
+
+        <div class="crew-strip" id="crew-strip"><div class="crew-heading"><span class="section-label">YOUR PEOPLE</span><span id="crew-count">5 RIDING</span></div><div class="crew-list" id="crew-list"></div></div>
+      </section>
+
+      <aside class="side-column">
+        <div class="journey-meta"><span class="chapter-tag" id="chapter-tag">DAY 01 <i>·</i> THE DEPARTURE</span><button class="text-button" id="restart-btn" hidden>↻ RESTART</button></div>
+        <div class="side-content" id="side-content"></div>
+        <section class="supplies" id="supplies"><div class="supply-head"><span class="section-label">WHAT'S IN THE VAN</span><button class="text-button inventory-button" id="inventory-toggle">DETAILS <span>↗</span></button></div><div id="resource-grid" class="resource-grid"></div><div id="inventory-extra" class="inventory-extra" hidden></div></section>
+        <div class="game-footer"><span>NO GPS. NO GUARANTEES.</span><span>MADE FOR THE MILES <i>✳</i></span></div>
+      </aside>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="modal-root"></div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
